@@ -10,8 +10,9 @@ A simple wrapper for Infisical Secrets Manager to manage secrets in a monorepo s
 ```env
 # /backend/.env.example
 PORT=3000
+DB_PORT=5432
+DB_NAME=
 DB_HOST=
-DB_PORT
 DB_PASSWORD=
 DB_USER=
 ```
