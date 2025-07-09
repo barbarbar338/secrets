@@ -1,0 +1,34 @@
+{
+	"name": "secrets",
+	"description": "A simple Node.js application to manage secrets using Infisical",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"author": {
+		"name": "Barış DEMİRCİ",
+		"email": "hi@338.rocks",
+		"url": "https://338.rocks"
+	},
+	"engines": {
+		"node": ">=20.x"
+	},
+	"packageManager": "yarn@1.22.22",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/barbarbar338/secrets.git"
+	},
+	"scripts": {
+		"start": "dotenvx run -f .env -- node index.js",
+		"format": "prettier --write .",
+		"update": "taze latest -w"
+	},
+	"dependencies": {
+		"@dotenvx/dotenvx": "^1.47.1",
+		"@infisical/sdk": "^4.0.2"
+	},
+	"devDependencies": {
+		"prettier": "^3.6.2",
+		"taze": "^19.1.0"
+	}
+}
