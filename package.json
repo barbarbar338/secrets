@@ -19,7 +19,7 @@
 		"url": "git+https://github.com/barbarbar338/secrets.git"
 	},
 	"scripts": {
-		"start": "dotenvx run -f .env -- node index.js",
+		"start": "yarn install --frozen-lockfile && dotenvx run -f .env -- node index.js",
 		"format": "prettier --write .",
 		"update": "taze latest -w"
 	},
