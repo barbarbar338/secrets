@@ -8,22 +8,7 @@ const client = new InfisicalSDK({
 	siteUrl: CONFIG.INFISICAL_HOST,
 });
 
-(async () => {
-	await client.auth().universalAuth.login({
-		clientId: CONFIG.INFISICAL_CLIENT_ID,
-		clientSecret: CONFIG.INFISICAL_CLIENT_SECRET,
-	});
-
-	for (const appType of CONFIG.APP_FOLDERS) {
-		for (const envType of CONFIG.ENV_TYPES) {
-			await getEnv(envType, appType);
-		}
-	}
-
-	console.log("Environment variables updated successfully in .env files.");
-})();
-
-async function getEnv(envType, app) {
+const getEnv = async (envType, app) => {
 	// Fetch secrets from Infisical
 	console.info(`Fetching ${app} ${envType} secrets from Infisical...`);
 
@@ -62,4 +47,21 @@ async function getEnv(envType, app) {
 	writeFileSync(join(appFolder, `.env.${envType}`), envString, "utf-8");
 
 	console.info(`${app} ${envType} secrets written to .env.${envType} file.`);
-}
+};
+
+const main = async () => {
+	await client.auth().universalAuth.login({
+		clientId: CONFIG.INFISICAL_CLIENT_ID,
+		clientSecret: CONFIG.INFISICAL_CLIENT_SECRET,
+	});
+
+	for (const appType of CONFIG.APP_FOLDERS) {
+		for (const envType of CONFIG.ENV_TYPES) {
+			await getEnv(envType, appType);
+		}
+	}
+
+	console.log("Environment variables updated successfully in .env files.");
+};
+
+main();
