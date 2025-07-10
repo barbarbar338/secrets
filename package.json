@@ -1,17 +1,25 @@
 {
-	"name": "secrets",
-	"description": "A simple Node.js application to manage secrets using Infisical",
-	"version": "1.0.0",
-	"main": "index.js",
-	"license": "MIT",
 	"author": {
-		"name": "Barış DEMİRCİ",
 		"email": "hi@338.rocks",
+		"name": "Barış DEMİRCİ",
 		"url": "https://338.rocks"
+	},
+	"dependencies": {
+		"@dotenvx/dotenvx": "^1.47.3",
+		"@infisical/sdk": "^4.0.2",
+		"envalid": "^8.0.0"
+	},
+	"description": "A simple Node.js application to manage secrets using Infisical",
+	"devDependencies": {
+		"prettier": "^3.6.2",
+		"taze": "^19.1.0"
 	},
 	"engines": {
 		"node": ">=20.x"
 	},
+	"license": "MIT",
+	"main": "index.js",
+	"name": "secrets",
 	"packageManager": "yarn@1.22.22",
 	"private": true,
 	"repository": {
@@ -19,17 +27,9 @@
 		"url": "git+https://github.com/barbarbar338/secrets.git"
 	},
 	"scripts": {
-		"start": "yarn install --frozen-lockfile && dotenvx run -f .env -- node index.js",
 		"format": "prettier --write .",
+		"start": "yarn install --frozen-lockfile && dotenvx run -f .env -- node index.js",
 		"update": "taze latest -w"
 	},
-	"dependencies": {
-		"@dotenvx/dotenvx": "^1.47.3",
-		"@infisical/sdk": "^4.0.2",
-		"envalid": "^8.0.0"
-	},
-	"devDependencies": {
-		"prettier": "^3.6.2",
-		"taze": "^19.1.0"
-	}
+	"version": "1.0.0"
 }
