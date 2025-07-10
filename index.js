@@ -9,11 +9,10 @@ const client = new InfisicalSDK({
 });
 
 const getEnv = async (envType, app) => {
-	// Fetch secrets from Infisical
 	console.info(`Fetching ${app} ${envType} secrets from Infisical...`);
 
 	const { secrets } = await client.secrets().listSecrets({
-		environment: envType, // dev, prod, stag.
+		environment: envType,
 		projectId: CONFIG.INFISICAL_PROJECT_ID,
 		secretPath: `/${app}`,
 	});
@@ -25,7 +24,6 @@ const getEnv = async (envType, app) => {
 		return acc;
 	}, {});
 
-	// Read the example .env file and merge with fetched secrets
 	const appFolder = join(__dirname, "..", app);
 	const exampleEnv = parse(
 		readFileSync(join(appFolder, ".env.example")),

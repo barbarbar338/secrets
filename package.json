@@ -24,8 +24,9 @@
 		"update": "taze latest -w"
 	},
 	"dependencies": {
-		"@dotenvx/dotenvx": "^1.47.1",
-		"@infisical/sdk": "^4.0.2"
+		"@dotenvx/dotenvx": "^1.47.3",
+		"@infisical/sdk": "^4.0.2",
+		"envalid": "^8.0.0"
 	},
 	"devDependencies": {
 		"prettier": "^3.6.2",
