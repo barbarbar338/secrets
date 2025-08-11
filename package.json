@@ -5,9 +5,9 @@
 		"url": "https://338.rocks"
 	},
 	"dependencies": {
-		"@dotenvx/dotenvx": "^1.47.3",
-		"@infisical/sdk": "^4.0.2",
-		"envalid": "^8.0.0"
+		"@dotenvx/dotenvx": "^1.48.4",
+		"@infisical/sdk": "^4.0.4",
+		"envalid": "^8.1.0"
 	},
 	"description": "A simple Node.js application to manage secrets using Infisical",
 	"devDependencies": {
